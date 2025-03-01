@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-
+//
         CounterClass even = new CounterClass("Счетчик Четных"); // создаем объедки
         CounterClass noEven = new CounterClass("Счетчик Нечетных");
 
