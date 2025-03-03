@@ -5,18 +5,24 @@ import java.util.Arrays;
 public class CounterService {
 
     //поля
-    private Counter[] counterArr = new Counter[10];
+    private Counter[] counterArr;
 
 
     //методы(добавить к массиву)
-    public void addtoArr(Counter counter) {
-        int b = 0;
-        counterArr[b] = counter;
+    public void addtoArr(Counter... counters) {
+        counterArr = counters;
     }
+
     //показать массив счетчиков
-    public void showCounters() {
-        System.out.println(Arrays.toString(counterArr));
+    public String showCounters() {
+        String s = "";
+        for (Counter b : counterArr) {
+            s += b.getName() + "; ";
+        }
+        System.out.println(s);
+        return s;
     }
+
     //получить доступ к счетчику по имени
     public Counter getAccesByName(String thename) {
 
@@ -26,18 +32,22 @@ public class CounterService {
         return null;
 
     }
+
+    public int showValue(Counter c){
+        return c.getValue();
+    }
+
     //изменить значение счетчика
     public void setterViper(Counter c, int x) {
         c.setValue(x);
     }
+
     //++1 или ++ число
     public void incremerOn(Counter c, int y) {
         int x = c.getValue();
-        if (y == 0) {
-            c.setValue(++x);
-        } else {
-            c.setValue(x + y);
-        }
+        if (y == 0) c.setValue(++x);
+        else c.setValue(x + y);
+
     }
 
 
