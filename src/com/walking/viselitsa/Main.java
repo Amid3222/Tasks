@@ -11,7 +11,7 @@ public class Main {
 
 
         System.out.println("Слово: " + viselitsa.createLines());
-        System.out.println(viselitsa.word);//убрать строку и поменять приватность переменной ворд
+        System.out.println(viselitsa.word);//тесты
 
         do {
             System.out.println("Введите букву:");
