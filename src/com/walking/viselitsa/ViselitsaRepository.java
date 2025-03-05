@@ -1,7 +1,15 @@
 package com.walking.viselitsa;
 
 public class ViselitsaRepository {
+    private String linesWord;
 
+    public String getLinesWord(){
+        return linesWord;
+    }
+
+    public void setLinesWord(String linesWord){
+        this.linesWord = linesWord;
+    }
 
     String[] words = {
             "стол",

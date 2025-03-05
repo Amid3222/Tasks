@@ -7,7 +7,7 @@ public class ViselitsaService {
     private ViselitsaRepository VRep = new ViselitsaRepository();
     private String character;
     public String word;
-    private String linesWord;
+    //private String linesWord;
 
     private void setRandomWord() {
         int randValue = random.nextInt(VRep.words.length);
@@ -29,7 +29,7 @@ public class ViselitsaService {
     }
 
     public String viewLines() {
-        return linesWord;
+        return VRep.getLinesWord();
     }
 
     public String createLines() {
@@ -38,7 +38,8 @@ public class ViselitsaService {
         for (int i = 0; i < word.length(); i++) {
             wordLines.append("-");
         }
-        return this.linesWord = String.valueOf(wordLines);
+        VRep.setLinesWord(String.valueOf(wordLines));
+        return VRep.getLinesWord();
 
     }
 
@@ -52,12 +53,12 @@ public class ViselitsaService {
         StringBuilder stringLines = new StringBuilder(viewLines());
         for (int i = 0; i < stringWord.length(); i++) {
             if (stringWord.charAt(i) == getCharacter().charAt(0)) {
-                stringLines.replace(i, i+1, getCharacter());
-                this.linesWord = stringLines.toString();
+                stringLines.replace(i, i + 1, getCharacter());
+                VRep.setLinesWord(stringLines.toString());
                 System.out.println("meow"); //убрать
                 break;
 
-            } else
+            }
 
         }
 
