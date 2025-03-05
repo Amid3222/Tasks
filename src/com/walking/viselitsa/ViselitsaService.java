@@ -48,28 +48,22 @@ public class ViselitsaService {
 
 
     public void checkWordChar() {
-        if (charChecker()) {
-            char[] charsWord;
-            char[] charsLines;
-            charsWord = getWord().toCharArray();
-            charsLines = createLines().toCharArray();
-            int indexOf = 0;
+        StringBuilder stringWord = new StringBuilder(getWord());
+        StringBuilder stringLines = new StringBuilder(viewLines());
+        for (int i = 0; i < stringWord.length(); i++) {
+            if (stringWord.charAt(i) == getCharacter().charAt(0)) {
+                stringLines.replace(i, i+1, getCharacter());
+                this.linesWord = stringLines.toString();
+                System.out.println("meow"); //убрать
+                break;
 
-            for (int i = 0; i < charsWord.length; i++) {
-                if (Character.toString(charsWord[i]).equals(getCharacter())) {
-                    indexOf = i;
-                    System.out.println("meo1w");
-                    break;
-                }
-            }
-            System.out.println("meow");
+            } else
+
+        }
 
 
-            //linesWord = String.valueOf(charsLines[indexOf] = getCharacter().toCharArray()[0]);
-
-        }//буква угадывается
-        //не угадываеться
     }
 
-
 }
+
+
