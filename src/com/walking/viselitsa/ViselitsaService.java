@@ -9,11 +9,11 @@ public class ViselitsaService {
     public String word;
     private String linesWord;
 
-    private String setRandomWord() {
-        int randValue = random.nextInt(VRep.words.length+1);
+    private void setRandomWord() {
+        int randValue = random.nextInt(VRep.words.length);
         String word = VRep.words[randValue];
         this.word = word;
-        return word;
+
     }
 
     private String getWord() {
@@ -28,7 +28,11 @@ public class ViselitsaService {
         return character;
     }
 
-    public String showLines() {
+    public String viewLines() {
+        return linesWord;
+    }
+
+    public String createLines() {
         setRandomWord();
         StringBuilder wordLines = new StringBuilder();
         for (int i = 0; i < word.length(); i++) {
@@ -38,33 +42,33 @@ public class ViselitsaService {
 
     }
 
-    private boolean wordChecker() {
+    private boolean charChecker() {
         return getWord().contains(getCharacter());
     }
 
 
-    public void x() {
-
-
-        if (wordChecker()) {
+    public void checkWordChar() {
+        if (charChecker()) {
             char[] charsWord;
             char[] charsLines;
             charsWord = getWord().toCharArray();
-            charsLines = showLines().toCharArray();
+            charsLines = createLines().toCharArray();
             int indexOf = 0;
 
             for (int i = 0; i < charsWord.length; i++) {
                 if (Character.toString(charsWord[i]).equals(getCharacter())) {
                     indexOf = i;
+                    System.out.println("meo1w");
                     break;
                 }
-
             }
+            System.out.println("meow");
 
-            this.linesWord = String.valueOf(charsLines[indexOf] = getCharacter().toCharArray()[0]);
+
+            //linesWord = String.valueOf(charsLines[indexOf] = getCharacter().toCharArray()[0]);
 
         }//буква угадывается
-                    //не угадываеться
+        //не угадываеться
     }
 
 
